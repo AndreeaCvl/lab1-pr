@@ -43,8 +43,7 @@ def produce():
 
     # generating the numbers and sending them to the consumer server
     while True:
-        data = {'int': random.randint(0, 1000)}
-        requests.post("http://localhost:8081", headers=headers, params=params, json=data)
+        requests.post("http://localhost:8081", headers=headers, params=params, json={'int': random.randint(0, 1000)})
         time.sleep(3)
 
 
